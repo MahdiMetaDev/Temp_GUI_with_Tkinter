@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import E, W
+from tkinter import ttk
 
 # Initialization
 window = tk.Tk()
@@ -26,7 +26,7 @@ lbl_result = tk.Label(
 
 
 # Entries
-ent_fahrenheit = tk.Entry(
+ent_fahrenheit = ttk.Entry(
     master=window,
     width=40,
 )
@@ -43,7 +43,7 @@ def temp_calc(*args):
 
 
 # Buttons
-btn_calc = tk.Button(
+btn_calc = ttk.Button(
     master=window,
     text="Calc",
     width=8,
