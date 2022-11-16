@@ -32,9 +32,12 @@ ent_fahrenheit = tk.Entry(
 )
 
 
-def temp_calc():
+def temp_calc(*args):
     try:
-        lbl_result['text'] = (int(ent_fahrenheit.get())-32) * (5/9)
+        if ent_fahrenheit.get() == "":
+            lbl_result['text'] = "Input is empty..."
+        else:
+            lbl_result['text'] = (int(ent_fahrenheit.get())-32) * (5/9)
     except ValueError:
         lbl_result['text'] = "You should enter a number!"
 
@@ -46,6 +49,8 @@ btn_calc = tk.Button(
     width=8,
     command=temp_calc,
 )
+
+window.bind("<Return>", temp_calc)
 
 
 # Show Widgets
